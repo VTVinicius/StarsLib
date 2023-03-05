@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import br.com.vtvinicius.starslib.R
 
 @Composable
-fun Star5(
+fun FiveStars(
     onStarSelected: (Stars) -> Unit,
     pathScaleFactor: Float = 7f,
     distanceBetweenStars: Dp = 35.dp,

@@ -112,7 +112,7 @@ fun DialogScore(onDismissRequest: () -> Unit) {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Star5(
+                    FiveStars(
                         onStarSelected = { star = it },
                         animStarTimeFill = 1000,
                         animStarTimeEmpty = 500
