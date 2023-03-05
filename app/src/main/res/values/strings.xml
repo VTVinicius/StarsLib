@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StarsLib</string>
+    <string name="star_small_path">M5,0L6.123,3.455H9.755L6.816,5.59L7.939,9.045L5,6.91L2.061,9.045L3.184,5.59L0.245,3.455H3.877L5,0Z</string>
+</resources>
