@@ -177,7 +177,7 @@ fun FiveStars(
                 detectTapGestures {
                     val transformedStar1Rect = Rect(
                         offset = star1TranslationOffset,
-                        size = star1PathBounds.size * (size.height / star2PathBounds.height)
+                        size = star1PathBounds.size * (size.height / star1PathBounds.height)
                     )
                     val transformedStar2Rect = Rect(
                         offset = star2TranslationOffset,
@@ -185,16 +185,16 @@ fun FiveStars(
                     )
                     val transformedStar3Rect = Rect(
                         offset = star3TranslationOffset,
-                        size = star3PathBounds.size *( size.height / star2PathBounds.height)
+                        size = star3PathBounds.size *( size.height / star3PathBounds.height)
                     )
                     val transformedStar4Rect = Rect(
                         offset = star4TranslationOffset,
-                        size = star4PathBounds.size * (size.height / star2PathBounds.height)
+                        size = star4PathBounds.size * (size.height / star4PathBounds.height)
 
                     )
                     val transformedStar5Rect = Rect(
                         offset = star5TranslationOffset,
-                        size = star5PathBounds.size * (size.height / star2PathBounds.height)
+                        size = star5PathBounds.size * (size.height / star5PathBounds.height)
                     )
 
                     //Verifica se o click na tela foi feito dentro de alguma estrela.
@@ -224,8 +224,8 @@ fun FiveStars(
             //Controla a posição da tela onde a estrela vai ser desenhada. Tambem controla o Espaçamento entre elas.
 
             star1TranslationOffset = Offset(
-                x = star1PathBounds.width * (size.height / star2PathBounds.height) / 2f,
-                y = center.y - star1PathBounds.height * (size.height / star2PathBounds.height) / 2f
+                x = star1PathBounds.width * (size.height / star1PathBounds.height) / 2f,
+                y = center.y - star1PathBounds.height * (size.height / star1PathBounds.height) / 2f
             )
 
             star2TranslationOffset = Offset(
@@ -235,17 +235,17 @@ fun FiveStars(
 
             star3TranslationOffset = Offset(
                 x = star2TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * (size.height / star2PathBounds.height) / 2f
+                y = center.y - star1PathBounds.height * (size.height / star3PathBounds.height) / 2f
             )
 
             star4TranslationOffset = Offset(
                 x = star3TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * (size.height / star2PathBounds.height) / 2f
+                y = center.y - star1PathBounds.height * (size.height / star4PathBounds.height) / 2f
             )
 
             star5TranslationOffset = Offset(
                 x = star4TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * (size.height / star2PathBounds.height) / 2f
+                y = center.y - star1PathBounds.height * (size.height / star5PathBounds.height) / 2f
             )
 
 
@@ -255,7 +255,7 @@ fun FiveStars(
             val untransformedStar1ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star1PathBounds.center
             } else {
-                (currentClickOffset - star1TranslationOffset) / (size.height / star2PathBounds.height)
+                (currentClickOffset - star1TranslationOffset) / (size.height / star1PathBounds.height)
             }
 
             val untransformedStar2ClickOffset = if (currentClickOffset == Offset.Zero) {
@@ -267,19 +267,19 @@ fun FiveStars(
             val untransformedStar3ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star3PathBounds.center
             } else {
-                (currentClickOffset - star3TranslationOffset) / (size.height / star2PathBounds.height)
+                (currentClickOffset - star3TranslationOffset) / (size.height / star3PathBounds.height)
             }
 
             val untransformedStar4ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star4PathBounds.center
             } else {
-                (currentClickOffset - star4TranslationOffset) / (size.height / star2PathBounds.height)
+                (currentClickOffset - star4TranslationOffset) / (size.height / star4PathBounds.height)
             }
 
             val untransformedStar5ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star5PathBounds.center
             } else {
-                (currentClickOffset - star5TranslationOffset) / (size.height / star2PathBounds.height)
+                (currentClickOffset - star5TranslationOffset) / (size.height / star5PathBounds.height)
             }
 
 
