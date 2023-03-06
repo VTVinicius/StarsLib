@@ -1,4 +1,4 @@
-package br.com.vtvinicius.starslib.stars
+package br.com.vtvinicius.stars.stars
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

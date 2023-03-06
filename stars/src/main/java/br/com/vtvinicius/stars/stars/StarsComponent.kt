@@ -1,4 +1,4 @@
-package br.com.vtvinicius.starslib.stars
+package br.com.vtvinicius.stars.stars
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -20,8 +20,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import br.com.vtvinicius.starslib.R
-
+import br.com.vtvinicius.stars.R
 @Composable
 fun FiveStars(
     onStarSelected: (Stars) -> Unit,
@@ -175,23 +174,23 @@ fun FiveStars(
                 detectTapGestures {
                     val transformedStar1Rect = Rect(
                         offset = star1TranslationOffset,
-                        size = star1PathBounds.size * pathScaleFactor
+                        size = star1PathBounds.size * pathScaleFactor.toDp().toPx()
                     )
                     val transformedStar2Rect = Rect(
                         offset = star2TranslationOffset,
-                        size = star2PathBounds.size * pathScaleFactor
+                        size = star2PathBounds.size * pathScaleFactor.toDp().toPx()
                     )
                     val transformedStar3Rect = Rect(
                         offset = star3TranslationOffset,
-                        size = star3PathBounds.size * pathScaleFactor
+                        size = star3PathBounds.size * pathScaleFactor.toDp().toPx()
                     )
                     val transformedStar4Rect = Rect(
                         offset = star4TranslationOffset,
-                        size = star4PathBounds.size * pathScaleFactor
+                        size = star4PathBounds.size * pathScaleFactor.toDp().toPx()
                     )
                     val transformedStar5Rect = Rect(
                         offset = star5TranslationOffset,
-                        size = star5PathBounds.size * pathScaleFactor
+                        size = star5PathBounds.size * pathScaleFactor.toDp().toPx()
                     )
 
                     //Verifica se o click na tela foi feito dentro de alguma estrela.
@@ -221,28 +220,28 @@ fun FiveStars(
             //Controla a posição da tela onde a estrela vai ser desenhada. Tambem controla o Espaçamento entre elas.
 
             star1TranslationOffset = Offset(
-                x = star1PathBounds.width * pathScaleFactor / 2f,
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                x = star1PathBounds.width * pathScaleFactor.toDp().toPx() / 2f,
+                y = center.y - star1PathBounds.height * pathScaleFactor.toDp().toPx() / 2f
             )
 
             star2TranslationOffset = Offset(
                 x = star1TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * pathScaleFactor.toDp().toPx() / 2f
             )
 
             star3TranslationOffset = Offset(
                 x = star2TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * pathScaleFactor.toDp().toPx() / 2f
             )
 
             star4TranslationOffset = Offset(
                 x = star3TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * pathScaleFactor.toDp().toPx() / 2f
             )
 
             star5TranslationOffset = Offset(
                 x = star4TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * pathScaleFactor.toDp().toPx() / 2f
             )
 
 
@@ -252,31 +251,31 @@ fun FiveStars(
             val untransformedStar1ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star1PathBounds.center
             } else {
-                (currentClickOffset - star1TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star1TranslationOffset) / pathScaleFactor.toDp().toPx()
             }
 
             val untransformedStar2ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star2PathBounds.center
             } else {
-                (currentClickOffset - star2TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star2TranslationOffset) / pathScaleFactor.toDp().toPx()
             }
 
             val untransformedStar3ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star3PathBounds.center
             } else {
-                (currentClickOffset - star3TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star3TranslationOffset) / pathScaleFactor.toDp().toPx()
             }
 
             val untransformedStar4ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star4PathBounds.center
             } else {
-                (currentClickOffset - star4TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star4TranslationOffset) / pathScaleFactor.toDp().toPx()
             }
 
             val untransformedStar5ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star5PathBounds.center
             } else {
-                (currentClickOffset - star5TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star5TranslationOffset) / pathScaleFactor.toDp().toPx()
             }
 
 
@@ -287,7 +286,7 @@ fun FiveStars(
                 top = star1TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = pathScaleFactor.toDp().toPx(),
                     pivot = star1PathBounds.topLeft
                 ) {
                     drawPath(
@@ -320,7 +319,7 @@ fun FiveStars(
                 top = star2TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = pathScaleFactor.toDp().toPx(),
                     pivot = star2PathBounds.topLeft
                 ) {
                     drawPath(
@@ -353,7 +352,7 @@ fun FiveStars(
                 top = star3TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = pathScaleFactor.toDp().toPx(),
                     pivot = star3PathBounds.topLeft
                 ) {
                     drawPath(
@@ -386,7 +385,7 @@ fun FiveStars(
                 top = star4TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = pathScaleFactor.toDp().toPx(),
                     pivot = star4PathBounds.topLeft
                 ) {
                     drawPath(
@@ -419,7 +418,7 @@ fun FiveStars(
                 top = star5TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = pathScaleFactor.toDp().toPx(),
                     pivot = star5PathBounds.topLeft
                 ) {
                     drawPath(
